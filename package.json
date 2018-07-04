@@ -4,7 +4,7 @@
   "description": "Three Towers Game",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nodemon --exec mocha spec/**/*.test.js"
   },
   "repository": {
     "type": "git",
