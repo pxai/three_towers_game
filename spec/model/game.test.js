@@ -3,7 +3,7 @@ const expect = chai.expect;
 const { Game } = require('../../model/game');
 
 describe('basic tests form game', () => {
-	it('should exist', () => {
-		expect(Game).to.exist;
-	});	
+  it('should exist', () => {
+    expect(Game).to.exist;
+  });
 });
