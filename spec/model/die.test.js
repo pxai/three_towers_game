@@ -19,7 +19,7 @@ describe('basic testing for Die', () => {
     let die = new Die();
     for (let i = 0; i < 100; i++) {
       die.roll();
-      expect(die.value).to.be.within(1, 6);
+      expect(die.value()).to.be.within(1, 6);
     }
   });
 });

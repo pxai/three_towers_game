@@ -13,7 +13,7 @@ class Die {
     this._value = Math.round((Math.random() * (this._sides - 1)) + 1);
   }
 
-  get value () {
+  value () {
     return this._value;
   }
 }

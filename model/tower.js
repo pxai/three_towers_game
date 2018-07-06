@@ -34,6 +34,22 @@ class Tower {
   get top () {
     return this._tower[2];
   }
+
+  canYouAdd (die) {
+    if (this.isNotCompleted()) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  isNotCompleted () {
+    return this.height() === 3;
+  }
+
+  isBiggerThanLast (value) {
+    return this.height() === 0 || this._tower.slice(-1)[0] < value;
+  }
 }
 
 module.exports = { Tower };
