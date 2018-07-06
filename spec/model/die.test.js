@@ -18,7 +18,8 @@ describe('basic testing for Die', () => {
   it('should roll properly', () => {
     let die = new Die();
     for (let i = 0; i < 100; i++) {
-      expect(die.roll()).to.be.within(1, 6);
+      die.roll();
+      expect(die.value).to.be.within(1, 6);
     }
   });
 });
