@@ -53,11 +53,10 @@ describe('basic test for tower', () => {
 
   it('should not allow to add incorrect smaller or equal', () => {
     let tower = new Tower();
-    let myObj = { value: -1 };
-    //let mockDie = sinon.stub(myObj,"value").callsFake(()=>6);
+    let mockFirstDie = { value: sinon.stub().returns(4) };
+    let mockDie = { value: sinon.stub().returns(6) };
 
-//    console.log(mockDie.value());
-    tower.add(new D6());
-    expect(tower.isBiggerThanLast(-1)).to.be.false;
+    tower.add(mockFirstDie);
+    expect(tower.isBiggerThanLast(mockDie.value())).to.be.false;
   });
 });
