@@ -48,15 +48,35 @@ describe('basic test for tower', () => {
     tower.add(new D6());
     tower.add(new D6());
     tower.add(new D6());
+
     expect(tower.canYouAdd(new D6())).to.be.false;
   });
 
-  it('should not allow to add incorrect smaller or equal', () => {
+  it('should not be possible to add 5 or 6 at the beginning', () => {
+    let tower = new Tower();
+    let mockDie = { value: sinon.stub().returns(6) };
+
+    expect(tower.canYouAdd(mockDie)).to.be.false;
+  });
+
+  it('should detect if new die is bigger or equal than tower top', () => {
     let tower = new Tower();
     let mockFirstDie = { value: sinon.stub().returns(4) };
     let mockDie = { value: sinon.stub().returns(6) };
 
     tower.add(mockFirstDie);
-    expect(tower.isBiggerThanLast(mockDie.value())).to.be.false;
+
+    expect(tower.isBiggerThanLast(mockDie.value())).to.be.true;
+
+    tower = new Tower();
+    let realDie = new D6();
+    realDie.roll();
+
+    tower.add(realDie);
+
+    expect(tower.isBiggerThanLast(realDie.value())).to.be.true;
+  });
+
+  it.skip('should not allow to add incorrect smaller or equal', () => {
   });
 });

@@ -36,19 +36,21 @@ class Tower {
   }
 
   canYouAdd (die) {
-    if (this.isNotCompleted()) {
-      return false;
-    } else {
-      return true;
-    }
+    return this.isNotCompleted() &&
+           this.isTooBigForPosition(die.value) &&
+           this.isBiggerThanLast(die.value);
   }
 
   isNotCompleted () {
-    return this.height() === 3;
+    return this.height() !== 3;
+  }
+
+  isTooBigForPosition (value) {
+    return !(value >= 5 && this.height() < 2);
   }
 
   isBiggerThanLast (value) {
-    return this.height() === 0 || this._tower.slice(-1)[0] < value;
+    return !(this.height() === 0 || this._tower.slice(-1)[0] < value);
   }
 }
 
