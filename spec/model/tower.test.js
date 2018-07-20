@@ -84,7 +84,7 @@ describe('basic test for tower', () => {
     expect(tower.isBiggerThanLast(realDie.value())).to.be.true;
   });
 
-  it('should not allow to add incorrect smaller or equal', () => {
+  it.skip('should not allow to add incorrect smaller or equal', () => {
 
   });
 });
