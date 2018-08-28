@@ -7,6 +7,7 @@ class Game {
     this._players.push(player);
   }
 
+
   isFinished () {
     const players = this._players.filter(player => player.isFinished());
     return players.length > 0;

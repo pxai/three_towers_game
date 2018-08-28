@@ -1,4 +1,3 @@
-
 class Die {
   constructor (sides = 6) {
     this._sides = sides;
